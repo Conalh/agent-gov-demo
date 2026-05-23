@@ -44,11 +44,14 @@ jobs:
         run: cp "${RUNNER_TEMP}/policymesh-report.json" reports/ || true
 
       # 3. CapabilityEcho — capability drift via code/workflow diff.
+      #    CapabilityEcho appends `.json` literally to report-file, so we
+      #    drop the .md extension to land the sibling at
+      #    `capabilityecho-report.json`.
       - name: CapabilityEcho
-        uses: Conalh/CapabilityEcho@v0.2.0
+        uses: Conalh/CapabilityEcho@v0.2.1
         with:
           fail-on: none
-          report-file: ${{ runner.temp }}/capabilityecho-report.md
+          report-file: ${{ runner.temp }}/capabilityecho-report
       - name: Collect CapabilityEcho report
         if: always()
         run: cp "${RUNNER_TEMP}/capabilityecho-report.json" reports/ || true
@@ -64,7 +67,7 @@ jobs:
 
       # 5. SessionTrail — runtime behavior from agent transcripts checked into the repo.
       - name: SessionTrail
-        uses: Conalh/SessionTrail@v0.6.0
+        uses: Conalh/SessionTrail@v0.6.1
         with:
           transcript-dir: ai-agent-transcripts
           repo: .
@@ -76,7 +79,7 @@ jobs:
       # 6. GovVerdict — one consolidated review across all five reports.
       - name: GovVerdict
         if: always()
-        uses: Conalh/GovVerdict@v0.2.0
+        uses: Conalh/GovVerdict@v0.2.1
         with:
           reports: 'reports/*.json'
           format: md
