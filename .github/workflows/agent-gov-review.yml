@@ -76,20 +76,6 @@ jobs:
         if: always()
         run: cp "${RUNNER_TEMP}/sessiontrail-report.json" reports/ || true
 
-      # Debug: list what made it into reports/ before GovVerdict reads it.
-      - name: Debug — list collected reports
-        if: always()
-        run: |
-          echo "--- ls reports/ ---"
-          ls -la reports/ || true
-          echo "--- ls RUNNER_TEMP ---"
-          ls -la "${RUNNER_TEMP}" | grep -E "report\.json|report\.md" || true
-          for f in reports/*.json; do
-            echo "--- head $f ---"
-            head -c 600 "$f" || true
-            echo ""
-          done
-
       # 6. GovVerdict — one consolidated review across all five reports.
       - name: GovVerdict
         if: always()
