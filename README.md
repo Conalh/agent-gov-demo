@@ -22,7 +22,7 @@ Watch [`demo/rogue-agent`](https://github.com/Conalh/agent-gov-demo/pulls) — t
 | [TaskBound](https://github.com/Conalh/TaskBound) | PR titled "fix typo" but touches unrelated files |
 | [SessionTrail](https://github.com/Conalh/SessionTrail) | Transcript reading `.ssh`, piping `curl` to shell |
 
-Then [GovVerdict](https://github.com/Conalh/GovVerdict) consolidates all five into one PR comment.
+Then [GovVerdict](https://github.com/Conalh/GovVerdict) consolidates all five into one PR comment. The current rogue PR produces **36 findings — 4 critical, 16 high, 16 medium** across `session_trail`, `scope_trail`, `policy_mesh`, `task_bound`, and `capability_echo` kinds. The job fails on critical, so the PR check turns red.
 
 ## License
 
