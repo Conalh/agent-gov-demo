@@ -45,7 +45,7 @@ jobs:
 
       # 3. CapabilityEcho — capability drift via code/workflow diff.
       - name: CapabilityEcho
-        uses: Conalh/CapabilityEcho@v0.2.0
+        uses: Conalh/CapabilityEcho@v0.2.1
         with:
           fail-on: none
           report-file: ${{ runner.temp }}/capabilityecho-report.md
@@ -64,7 +64,7 @@ jobs:
 
       # 5. SessionTrail — runtime behavior from agent transcripts checked into the repo.
       - name: SessionTrail
-        uses: Conalh/SessionTrail@v0.6.0
+        uses: Conalh/SessionTrail@v0.6.1
         with:
           transcript-dir: ai-agent-transcripts
           repo: .
