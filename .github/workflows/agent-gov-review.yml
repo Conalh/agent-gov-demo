@@ -76,7 +76,7 @@ jobs:
       # 6. GovVerdict — one consolidated review across all five reports.
       - name: GovVerdict
         if: always()
-        uses: Conalh/GovVerdict@v0.2.0
+        uses: Conalh/GovVerdict@v0.2.1
         with:
           reports: 'reports/*.json'
           format: md
