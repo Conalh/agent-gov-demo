@@ -7,8 +7,8 @@ Demo sandbox for the [agent-gov suite](https://github.com/Conalh/agent-gov-core)
 - `src/index.js` — minimal Node HTTP server (no deps)
 - `CLAUDE.md` + `.cursorrules` + `.mcp.json` — declared agent surfaces, in agreement on `main`
 - `.claude/settings.json` — modest permission set (Read, Edit, `npm test`, `git status`)
-- `ai-agent-transcripts/clean-session.jsonl` — baseline transcript with nothing risky
 - `.github/workflows/agent-gov-review.yml` — runs the full suite + [GovVerdict](https://github.com/Conalh/GovVerdict) consolidation on every PR
+- `ai-agent-transcripts/` — empty on main; the rogue PR drops `rogue-session.jsonl` here
 
 ## The rogue PR
 
