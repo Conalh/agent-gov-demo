@@ -1,0 +1,84 @@
+# Agent-gov suite review on every pull request.
+#
+# Runs the five consumer Actions against this repo's PR, collects each
+# JSON report from ${RUNNER_TEMP}, and hands the glob to GovVerdict
+# for one consolidated review.
+
+name: agent-gov review
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare reports dir
+        run: mkdir -p reports
+
+      # 1. ScopeTrail — agent permission drift in this PR.
+      - name: ScopeTrail
+        uses: Conalh/ScopeTrail@v0.2.0
+        with:
+          fail-on: none
+      - name: Collect ScopeTrail report
+        if: always()
+        run: cp "${RUNNER_TEMP}/scopetrail-report.json" reports/ || true
+
+      # 2. PolicyMesh — cross-surface policy contradictions in this repo.
+      - name: PolicyMesh
+        uses: Conalh/PolicyMesh@v0.5.0
+        with:
+          fail-on: none
+      - name: Collect PolicyMesh report
+        if: always()
+        run: cp "${RUNNER_TEMP}/policymesh-report.json" reports/ || true
+
+      # 3. CapabilityEcho — capability drift via code/workflow diff.
+      - name: CapabilityEcho
+        uses: Conalh/CapabilityEcho@v0.2.0
+        with:
+          fail-on: none
+          report-file: ${{ runner.temp }}/capabilityecho-report.md
+      - name: Collect CapabilityEcho report
+        if: always()
+        run: cp "${RUNNER_TEMP}/capabilityecho-report.json" reports/ || true
+
+      # 4. TaskBound — diff scope vs. stated task.
+      - name: TaskBound
+        uses: Conalh/TaskBound@v0.7.0
+        with:
+          fail-on: none
+      - name: Collect TaskBound report
+        if: always()
+        run: cp "${RUNNER_TEMP}/taskbound-report.json" reports/ || true
+
+      # 5. SessionTrail — runtime behavior from agent transcripts checked into the repo.
+      - name: SessionTrail
+        uses: Conalh/SessionTrail@v0.6.0
+        with:
+          transcript-dir: ai-agent-transcripts
+          repo: .
+          fail-on: none
+      - name: Collect SessionTrail report
+        if: always()
+        run: cp "${RUNNER_TEMP}/sessiontrail-report.json" reports/ || true
+
+      # 6. GovVerdict — one consolidated review across all five reports.
+      - name: GovVerdict
+        if: always()
+        uses: Conalh/GovVerdict@v0.2.0
+        with:
+          reports: 'reports/*.json'
+          format: md
+          workflow-name: ${{ github.event.pull_request.html_url || github.workflow }}
+          fail-on: critical

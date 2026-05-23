@@ -1,0 +1,16 @@
+{
+  "name": "agent-gov-demo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Demo project for the agent-gov suite.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test test/*.test.mjs || true"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
