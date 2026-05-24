@@ -1,6 +1,6 @@
 # agent-gov-demo
 
-Demo sandbox for the [agent-gov suite](https://github.com/Conalh/agent-gov-core). A boring TODO-API skeleton that exists so we can plant agent-policy drift in a PR and watch all five tools fire at once.
+Demo sandbox for the [agent-gov suite](https://github.com/Conalh/agent-gov-core). A boring TODO API skeleton that exists so we can plant agent-policy drift in a PR and watch all five tools fire at once.
 
 ## What's in the box
 

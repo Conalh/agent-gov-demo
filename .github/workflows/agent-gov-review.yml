@@ -44,9 +44,9 @@ jobs:
         run: cp "${RUNNER_TEMP}/policymesh-report.json" reports/ || true
 
       # 3. CapabilityEcho — capability drift via code/workflow diff.
-      #    CapabilityEcho appends `.json` literally to report-file, so we
-      #    drop the .md extension to land the sibling at
-      #    `capabilityecho-report.json`.
+      #    CapabilityEcho writes a sibling `<path>.json` literally — so a
+      #    report-file ending in .md produces `<name>.md.json`. We drop the
+      #    extension so the sibling lands at `capabilityecho-report.json`.
       - name: CapabilityEcho
         uses: Conalh/CapabilityEcho@v0.2.1
         with:
