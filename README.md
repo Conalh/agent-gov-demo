@@ -8,21 +8,20 @@ Demo sandbox for the [agent-gov suite](https://github.com/Conalh/agent-gov-core)
 - `CLAUDE.md` + `.cursorrules` + `.mcp.json` — declared agent surfaces, in agreement on `main`
 - `.claude/settings.json` — modest permission set (Read, Edit, `npm test`, `git status`)
 - `.github/workflows/agent-gov-review.yml` — runs the full suite + [GovVerdict](https://github.com/Conalh/GovVerdict) consolidation on every PR
-- `ai-agent-transcripts/` — empty on main; the rogue PR drops `rogue-session.jsonl` here
 
 ## The rogue PR
 
-Watch [`demo/rogue-agent`](https://github.com/Conalh/agent-gov-demo/pulls) — that branch deliberately introduces every category of drift the suite catches:
+[Pull request #1](https://github.com/Conalh/agent-gov-demo/pull/1) (branch `demo/rogue-agent`) deliberately introduces every category of drift the suite catches:
 
 | Tool | Drift planted |
 | --- | --- |
 | [ScopeTrail](https://github.com/Conalh/ScopeTrail) | Expanded `.claude/settings.json` permissions |
 | [PolicyMesh](https://github.com/Conalh/PolicyMesh) | `.cursorrules` contradicts `CLAUDE.md` |
 | [CapabilityEcho](https://github.com/Conalh/CapabilityEcho) | New outbound `fetch` to a telemetry host in `src/` |
-| [TaskBound](https://github.com/Conalh/TaskBound) | PR titled "fix typo" but touches unrelated files |
+| [TaskBound](https://github.com/Conalh/TaskBound) | PR titled "fix: typo in README" but touches unrelated files |
 | [SessionTrail](https://github.com/Conalh/SessionTrail) | Transcript reading `.ssh`, piping `curl` to shell |
 
-Then [GovVerdict](https://github.com/Conalh/GovVerdict) consolidates all five into one PR comment. The current rogue PR produces **36 findings — 4 critical, 16 high, 16 medium** across `session_trail`, `scope_trail`, `policy_mesh`, `task_bound`, and `capability_echo` kinds. The job fails on critical, so the PR check turns red.
+Then [GovVerdict](https://github.com/Conalh/GovVerdict) consolidates all five into one PR comment. The job fails on critical, so the PR check turns red.
 
 ## License
 
