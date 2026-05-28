@@ -43,6 +43,7 @@ This repo turns that into a concrete artifact. `main` is intentionally quiet. Th
 | `CLAUDE.md`, `.cursorrules`, `.mcp.json` | Declared agent surfaces, aligned on `main`. |
 | `.claude/settings.json` | Modest baseline permission set: Read, Edit, `npm test`, `git status`. |
 | `.github/workflows/agent-gov-review.yml` | Runs the suite plus [GovVerdict](https://github.com/Conalh/GovVerdict) consolidation on every PR. |
+| `sample-review/` | The actual JSON reports and merged verdict captured from the rogue PR — committed proof, not a screenshot. |
 
 ## The rogue PR
 
@@ -58,6 +59,12 @@ This repo turns that into a concrete artifact. `main` is intentionally quiet. Th
 | [GovVerdict](https://github.com/Conalh/GovVerdict) | Consolidates all five reports into one PR verdict. |
 
 The job fails on critical findings, so the PR check turns red by design.
+
+The five tools emit **42 findings**, which GovVerdict dedupes by fingerprint to
+**38 — 4 critical, 17 high, 17 medium** (consolidated rating: critical). Those
+reports and the merged verdict are committed under
+[`sample-review/`](sample-review/), so the numbers are verifiable in this repo
+without re-running CI or trusting a screenshot.
 
 ## How to use this repo
 

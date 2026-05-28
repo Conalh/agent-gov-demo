@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "1.0",
+  "tool": "policy_mesh",
+  "rating": "medium",
+  "findings": [
+    {
+      "tool": "policy_mesh",
+      "kind": "policy_mesh.claude_broad_allow_no_guard",
+      "severity": "medium",
+      "message": "Claude has broad allow rules (Bash(npm install:*), Bash(npm publish:*), Bash(git log:*), Bash(git push:*), Bash(curl:*), Bash(wget:*), Bash(rm -rf:*), Bash(*), WebFetch, WebSearch) without a PreToolUse hook.",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 9
+      },
+      "salientKey": "Bash(npm install:*)",
+      "data": {
+        "subject": "Bash(npm install:*)",
+        "recommendation": "Add a PreToolUse hook to guard broad permissions, or narrow allow patterns to the minimum required scope.",
+        "surfaces": [
+          "claude"
+        ],
+        "signature": "84d811e6d0d34b48"
+      },
+      "fingerprint": "bf770c5da4c3581f"
+    }
+  ],
+  "data": {
+    "surfaceCount": 3,
+    "effectiveUnion": [
+      "bash wildcards allowed (Claude)",
+      "Loosest: Claude (10 broad allows, no PreToolUse guard)"
+    ],
+    "matrix": [
+      {
+        "capability": "Allow: Read",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Edit",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Write",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(npm test)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(npm start)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(npm install:*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(npm publish:*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(git status)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(git diff)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(git log:*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(git push:*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(curl:*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(wget:*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(rm -rf:*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: Bash(*)",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: WebFetch",
+        "values": {
+          "claude": "allow"
+        }
+      },
+      {
+        "capability": "Allow: WebSearch",
+        "values": {
+          "claude": "allow"
+        }
+      }
+    ]
+  }
+}

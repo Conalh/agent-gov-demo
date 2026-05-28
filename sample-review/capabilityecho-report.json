@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "1.0",
+  "tool": "capability_echo",
+  "rating": "high",
+  "findings": [
+    {
+      "tool": "capability_echo",
+      "kind": "capability_echo.subprocess_spawn_added",
+      "severity": "high",
+      "message": "Added code can spawn shell commands or subprocesses.",
+      "location": {
+        "file": "src/index.js",
+        "line": 4
+      },
+      "salientKey": "Subprocess spawn",
+      "data": {
+        "subject": "Subprocess spawn",
+        "recommendation": "Confirm the command source is trusted and scoped to the task.",
+        "surface": "source"
+      },
+      "fingerprint": "24324661d7264412"
+    },
+    {
+      "tool": "capability_echo",
+      "kind": "capability_echo.external_fetch_added",
+      "severity": "medium",
+      "message": "Added code performs an external HTTP request that expands network reach.",
+      "location": {
+        "file": "src/index.js",
+        "line": 12
+      },
+      "salientKey": "External network fetch",
+      "data": {
+        "subject": "External network fetch",
+        "recommendation": "Review the endpoint, data sent, and whether the request belongs in this change.",
+        "surface": "source"
+      },
+      "fingerprint": "b46ad903dba64117"
+    },
+    {
+      "tool": "capability_echo",
+      "kind": "capability_echo.subprocess_spawn_added",
+      "severity": "high",
+      "message": "Added code can spawn shell commands or subprocesses.",
+      "location": {
+        "file": "src/index.js",
+        "line": 52
+      },
+      "salientKey": "Subprocess spawn",
+      "data": {
+        "subject": "Subprocess spawn",
+        "recommendation": "Confirm the command source is trusted and scoped to the task.",
+        "surface": "source"
+      },
+      "fingerprint": "c449f7666eeddea2"
+    }
+  ],
+  "data": {
+    "changedFileCount": 2,
+    "scannedSurfaces": [
+      "source",
+      "workflow"
+    ],
+    "excludedSurfaces": [
+      "AI-agent config"
+    ],
+    "surfaceSummary": {
+      "source": 3,
+      "package": 0,
+      "workflow": 0,
+      "container": 0
+    },
+    "severitySummary": {
+      "critical": 0,
+      "high": 2,
+      "medium": 1,
+      "low": 0
+    },
+    "capabilitySummary": [
+      "subprocess or shell spawn calls",
+      "external network fetch calls"
+    ],
+    "topRecommendations": [
+      "Confirm the command source is trusted and scoped to the task.",
+      "Review the endpoint, data sent, and whether the request belongs in this change."
+    ]
+  }
+}

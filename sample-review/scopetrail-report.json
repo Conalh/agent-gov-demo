@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0",
+  "tool": "scope_trail",
+  "rating": "high",
+  "findings": [
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Write.",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 6
+      },
+      "data": {
+        "subject": "Write",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "5d0414384c267997"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Bash(npm install:*).",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 9
+      },
+      "data": {
+        "subject": "Bash(npm install:*)",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "0ab68cb5c0358569"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Bash(npm publish:*).",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 10
+      },
+      "data": {
+        "subject": "Bash(npm publish:*)",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "c883cdfd73c8ea88"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Bash(git push:*).",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 14
+      },
+      "data": {
+        "subject": "Bash(git push:*)",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "a73dbb3e61f084e7"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Bash(curl:*).",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 15
+      },
+      "data": {
+        "subject": "Bash(curl:*)",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "8d52ec9727b124f5"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Bash(wget:*).",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 16
+      },
+      "data": {
+        "subject": "Bash(wget:*)",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "084c365f5948a12b"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Bash(rm -rf:*).",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 17
+      },
+      "data": {
+        "subject": "Bash(rm -rf:*)",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "38d1400fa59b40f4"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "high",
+      "message": "Claude permission allowlist now includes broad access: Bash(*).",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 18
+      },
+      "data": {
+        "subject": "Bash(*)",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "5636b5650c7c33f0"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "medium",
+      "message": "Claude permission allowlist now includes broad access: WebFetch.",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 19
+      },
+      "data": {
+        "subject": "WebFetch",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "fe63f854f3bcbff0"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_allow_widened",
+      "severity": "medium",
+      "message": "Claude permission allowlist now includes broad access: WebSearch.",
+      "location": {
+        "file": ".claude/settings.json",
+        "line": 20
+      },
+      "data": {
+        "subject": "WebSearch",
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+      },
+      "fingerprint": "a853da3e66919969"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: WebFetch.",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "data": {
+        "subject": "WebFetch",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal."
+      },
+      "fingerprint": "b3242ffa5f6b40d8"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: WebSearch.",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "data": {
+        "subject": "WebSearch",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal."
+      },
+      "fingerprint": "b3242ffa5f6b40d8"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: Bash(curl:*).",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "data": {
+        "subject": "Bash(curl:*)",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal."
+      },
+      "fingerprint": "b3242ffa5f6b40d8"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: Bash(wget:*).",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "data": {
+        "subject": "Bash(wget:*)",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal."
+      },
+      "fingerprint": "b3242ffa5f6b40d8"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: Bash(rm -rf:*).",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "data": {
+        "subject": "Bash(rm -rf:*)",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal."
+      },
+      "fingerprint": "b3242ffa5f6b40d8"
+    }
+  ]
+}
