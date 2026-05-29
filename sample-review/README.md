@@ -36,10 +36,16 @@ runs the same five Actions on every PR and hands the reports to GovVerdict. To
 reproduce locally with the built CLIs (each `dist/index.js`):
 
 ```bash
-node ScopeTrail/dist/index.js     diff  --repo agent-gov-demo --base main --head demo/rogue-agent --format json > scopetrail-report.json
+# GitHub computes a PR diff from the merge-base (three-dot). The diff CLIs take
+# two explicit refs and compare them directly, so pass the merge-base as --base
+# to match what CI actually reviewed — diffing from main's current tip would
+# also drag in commits main gained after the branch point.
+BASE=$(git -C agent-gov-demo merge-base main demo/rogue-agent)
+
+node ScopeTrail/dist/index.js     diff  --repo agent-gov-demo --base "$BASE" --head demo/rogue-agent --format json > scopetrail-report.json
 node PolicyMesh/dist/index.js     audit --repo agent-gov-demo --recursive --format json                        > policymesh-report.json
-node CapabilityEcho/dist/index.js diff  --repo agent-gov-demo --base main --head demo/rogue-agent --format json > capabilityecho-report.json
-node TaskBound/dist/index.js      review --task "fix: typo in README" --repo agent-gov-demo --base main --head demo/rogue-agent --format json > taskbound-report.json
+node CapabilityEcho/dist/index.js diff  --repo agent-gov-demo --base "$BASE" --head demo/rogue-agent --format json > capabilityecho-report.json
+node TaskBound/dist/index.js      review --task "fix: typo in README" --repo agent-gov-demo --base "$BASE" --head demo/rogue-agent --format json > taskbound-report.json
 node SessionTrail/dist/index.js   audit --transcript-dir agent-gov-demo/ai-agent-transcripts --repo agent-gov-demo --format json > sessiontrail-report.json
 
 node GovVerdict/dist/index.js review --reports '*-report.json' --format md

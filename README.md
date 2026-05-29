@@ -2,7 +2,7 @@
 
 **A deliberately boring demo repo for the agent-gov suite.** `agent-gov-demo` is a tiny TODO API skeleton with clean agent policy on `main` and one rogue PR that plants every major drift class the suite is meant to catch.
 
-The point is not the app. The point is the review surface: config drift, policy contradiction, code capability drift, task drift, transcript behavior, and one merged GovVerdict comment.
+The point is not the app. The point is the review surface: config drift, policy contradiction, code capability drift, task drift, transcript behavior, and one consolidated GovVerdict verdict.
 
 ```mermaid
 flowchart LR
@@ -33,7 +33,7 @@ flowchart LR
 
 The agent-gov tools are easier to understand when they fire on the same PR. A suite explanation can sound abstract: one tool watches config, one watches current policy, one watches code capability, one watches task scope, one watches runtime transcripts, and GovVerdict merges the output.
 
-This repo turns that into a concrete artifact. `main` is intentionally quiet. The rogue PR is intentionally suspicious. The resulting checks and comments show how the tools fit together.
+This repo turns that into a concrete artifact. `main` is intentionally quiet. The rogue PR is intentionally suspicious. The resulting checks, inline annotations, and step summaries show how the tools fit together.
 
 ## What's in the box
 
@@ -56,7 +56,7 @@ This repo turns that into a concrete artifact. `main` is intentionally quiet. Th
 | [CapabilityEcho](https://github.com/Conalh/CapabilityEcho) | New outbound `fetch` to a telemetry host in `src/`. |
 | [TaskBound](https://github.com/Conalh/TaskBound) | PR titled `fix: typo in README` but touches unrelated files. |
 | [SessionTrail](https://github.com/Conalh/SessionTrail) | Transcript reads `.ssh` and pipes `curl` to shell. |
-| [GovVerdict](https://github.com/Conalh/GovVerdict) | Consolidates all five reports into one PR verdict. |
+| [GovVerdict](https://github.com/Conalh/GovVerdict) | Consolidates all five reports into one verdict. |
 
 The job fails on critical findings, so the PR check turns red by design.
 
@@ -71,7 +71,7 @@ without re-running CI or trusting a screenshot.
 Use it as a reference when wiring the suite into another repository:
 
 1. Open [PR #1](https://github.com/Conalh/agent-gov-demo/pull/1).
-2. Inspect the workflow, step summary, annotations, and GovVerdict comment.
+2. Inspect the workflow run, the GovVerdict step summary, and the inline annotations.
 3. Compare the planted drift table above to the actual files changed in the PR.
 4. Copy the workflow shape into a real repo, starting with advisory thresholds before gating.
 

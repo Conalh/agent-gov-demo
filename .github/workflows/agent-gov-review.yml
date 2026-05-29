@@ -18,7 +18,7 @@ jobs:
   review:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -27,7 +27,7 @@ jobs:
 
       # 1. ScopeTrail — agent permission drift in this PR.
       - name: ScopeTrail
-        uses: Conalh/ScopeTrail@v0.2.0
+        uses: Conalh/ScopeTrail@v0.3.1
         with:
           fail-on: none
       - name: Collect ScopeTrail report
@@ -36,7 +36,7 @@ jobs:
 
       # 2. PolicyMesh — cross-surface policy contradictions in this repo.
       - name: PolicyMesh
-        uses: Conalh/PolicyMesh@v0.5.0
+        uses: Conalh/PolicyMesh@v0.5.2
         with:
           fail-on: none
       - name: Collect PolicyMesh report
@@ -48,7 +48,7 @@ jobs:
       #    drop the .md extension to land the sibling at
       #    `capabilityecho-report.json`.
       - name: CapabilityEcho
-        uses: Conalh/CapabilityEcho@v0.2.1
+        uses: Conalh/CapabilityEcho@v0.3.2
         with:
           fail-on: none
           report-file: ${{ runner.temp }}/capabilityecho-report
@@ -58,7 +58,7 @@ jobs:
 
       # 4. TaskBound — diff scope vs. stated task.
       - name: TaskBound
-        uses: Conalh/TaskBound@v0.7.0
+        uses: Conalh/TaskBound@v0.7.2
         with:
           fail-on: none
       - name: Collect TaskBound report
@@ -67,7 +67,7 @@ jobs:
 
       # 5. SessionTrail — runtime behavior from agent transcripts checked into the repo.
       - name: SessionTrail
-        uses: Conalh/SessionTrail@v0.6.1
+        uses: Conalh/SessionTrail@v0.6.4
         with:
           transcript-dir: ai-agent-transcripts
           repo: .
