@@ -34,6 +34,7 @@ test("SessionTrail is skipped when the optional transcript fixture is absent", (
 test("GovVerdict remains the red-by-design critical gate", () => {
   const govVerdict = stepBlock("GovVerdict");
   assert.match(govVerdict, /if: always\(\)/);
+  assert.match(govVerdict, /uses: Conalh\/GovVerdict@v0\.2\.4/);
   assert.match(govVerdict, /fail-on: critical/);
   assert.doesNotMatch(govVerdict, /fail-on: none/);
 });
