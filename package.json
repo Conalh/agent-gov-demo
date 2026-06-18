@@ -7,7 +7,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": "node --test test/*.test.mjs || true"
+    "test": "node --test test/*.test.mjs"
   },
   "license": "MIT",
   "engines": {
