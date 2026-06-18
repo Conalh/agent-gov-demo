@@ -1,6 +1,6 @@
 # Findings
 
-**Total**: 38 findings — 4 critical, 17 high, 17 medium, 0 low
+**Total**: 42 findings — 4 critical, 17 high, 21 medium, 0 low
 
 <details open>
 <summary><strong>4 critical</strong></summary>
@@ -40,7 +40,7 @@
 </details>
 
 <details>
-<summary><strong>17 medium</strong></summary>
+<summary><strong>21 medium</strong></summary>
 
 | File | Line | Kind | Message |
 |------|------|------|---------|
@@ -49,6 +49,10 @@
 | .claude/settings.json | 19 | scope_trail.permission_allow_widened | Claude permission allowlist now includes broad access: WebFetch. |
 | .claude/settings.json | 20 | scope_trail.permission_allow_widened | Claude permission allowlist now includes broad access: WebSearch. |
 | .claude/settings.json | — | scope_trail.permission_deny_removed | Claude permission deny rule was removed: WebFetch. |
+| .claude/settings.json | — | scope_trail.permission_deny_removed | Claude permission deny rule was removed: WebSearch. |
+| .claude/settings.json | — | scope_trail.permission_deny_removed | Claude permission deny rule was removed: Bash(curl:*). |
+| .claude/settings.json | — | scope_trail.permission_deny_removed | Claude permission deny rule was removed: Bash(wget:*). |
+| .claude/settings.json | — | scope_trail.permission_deny_removed | Claude permission deny rule was removed: Bash(rm -rf:*). |
 | ai-agent-transcripts/rogue-session.jsonl | 3 | session_trail.read_outside_repo | Read outside repository: agent read a file outside the declared repository root. |
 | ai-agent-transcripts/rogue-session.jsonl | 4 | session_trail.read_outside_repo | Read outside repository: agent read a file outside the declared repository root. |
 | ai-agent-transcripts/rogue-session.jsonl | 5 | session_trail.transcript_cross_read | Cross-session transcript read: agent read another session transcript outside the current task boundary. |

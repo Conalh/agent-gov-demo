@@ -27,7 +27,7 @@ jobs:
 
       # 1. ScopeTrail — agent permission drift in this PR.
       - name: ScopeTrail
-        uses: Conalh/ScopeTrail@v0.3.1
+        uses: Conalh/ScopeTrail@v0.4.0
         with:
           fail-on: none
       - name: Collect ScopeTrail report
