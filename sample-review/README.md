@@ -11,11 +11,11 @@ running CI.
 | | |
 | --- | --- |
 | Raw findings (5 tools) | 42 |
-| After GovVerdict fingerprint dedup | **38** |
-| Severity split | 4 critical · 17 high · 17 medium |
+| After GovVerdict fingerprint dedup | **42** |
+| Severity split | 4 critical · 17 high · 21 medium |
 | Consolidated rating | **critical** (job fails on `critical`) |
 
-Per tool, after merge: `session_trail` 13 · `scope_trail` 11 · `task_bound` 10 ·
+Per tool, after merge: `scope_trail` 15 · `session_trail` 13 · `task_bound` 10 ·
 `capability_echo` 3 · `policy_mesh` 1.
 
 ## Files
@@ -51,5 +51,5 @@ node SessionTrail/dist/index.js   audit --transcript-dir agent-gov-demo/ai-agent
 node GovVerdict/dist/index.js review --reports '*-report.json' --format md
 ```
 
-Captured 2026-05-28. CI produces equivalent output; file paths are normalized to
+Captured 2026-06-18. CI produces equivalent output; file paths are normalized to
 forward slashes so the artifact matches a Linux runner.

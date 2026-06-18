@@ -78,7 +78,7 @@ This repo turns that into a concrete artifact. `main` is intentionally quiet. Th
 The job fails on critical findings, so the PR check turns red by design.
 
 The five tools emit **42 findings**, which GovVerdict dedupes by fingerprint to
-**38 — 4 critical, 17 high, 17 medium** (consolidated rating: critical). Those
+**42 — 4 critical, 17 high, 21 medium** (consolidated rating: critical). Those
 reports and the merged verdict are committed under
 [`sample-review/`](sample-review/), so the numbers are verifiable in this repo
 without re-running CI or trusting a screenshot.

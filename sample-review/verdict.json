@@ -137,11 +137,14 @@
         "file": ".claude/settings.json",
         "line": 6
       },
+      "salientKey": "Write",
       "data": {
         "subject": "Write",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "5d0414384c267997"
+      "fingerprint": "db25884d3ef01036"
     },
     {
       "tool": "scope_trail",
@@ -152,11 +155,14 @@
         "file": ".claude/settings.json",
         "line": 9
       },
+      "salientKey": "Bash(npm install:*)",
       "data": {
         "subject": "Bash(npm install:*)",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "0ab68cb5c0358569"
+      "fingerprint": "d9d8d29c35c36a4d"
     },
     {
       "tool": "scope_trail",
@@ -167,11 +173,14 @@
         "file": ".claude/settings.json",
         "line": 10
       },
+      "salientKey": "Bash(npm publish:*)",
       "data": {
         "subject": "Bash(npm publish:*)",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "c883cdfd73c8ea88"
+      "fingerprint": "cc8a9aa435e9357c"
     },
     {
       "tool": "scope_trail",
@@ -182,11 +191,14 @@
         "file": ".claude/settings.json",
         "line": 14
       },
+      "salientKey": "Bash(git push:*)",
       "data": {
         "subject": "Bash(git push:*)",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "a73dbb3e61f084e7"
+      "fingerprint": "874158fc6dd451ca"
     },
     {
       "tool": "scope_trail",
@@ -197,11 +209,14 @@
         "file": ".claude/settings.json",
         "line": 15
       },
+      "salientKey": "Bash(curl:*)",
       "data": {
         "subject": "Bash(curl:*)",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "8d52ec9727b124f5"
+      "fingerprint": "2f1dc898ca32983f"
     },
     {
       "tool": "scope_trail",
@@ -212,11 +227,14 @@
         "file": ".claude/settings.json",
         "line": 16
       },
+      "salientKey": "Bash(wget:*)",
       "data": {
         "subject": "Bash(wget:*)",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "084c365f5948a12b"
+      "fingerprint": "ea7553798a1bd9d5"
     },
     {
       "tool": "scope_trail",
@@ -227,11 +245,14 @@
         "file": ".claude/settings.json",
         "line": 17
       },
+      "salientKey": "Bash(rm -rf:*)",
       "data": {
         "subject": "Bash(rm -rf:*)",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "38d1400fa59b40f4"
+      "fingerprint": "b70887c9f7e56b33"
     },
     {
       "tool": "scope_trail",
@@ -242,11 +263,14 @@
         "file": ".claude/settings.json",
         "line": 18
       },
+      "salientKey": "Bash(*)",
       "data": {
         "subject": "Bash(*)",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "5636b5650c7c33f0"
+      "fingerprint": "ffcc44ce5adbccc4"
     },
     {
       "tool": "session_trail",
@@ -412,11 +436,14 @@
         "file": ".claude/settings.json",
         "line": 19
       },
+      "salientKey": "WebFetch",
       "data": {
         "subject": "WebFetch",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "fe63f854f3bcbff0"
+      "fingerprint": "fc406f94af9412f4"
     },
     {
       "tool": "scope_trail",
@@ -427,11 +454,14 @@
         "file": ".claude/settings.json",
         "line": 20
       },
+      "salientKey": "WebSearch",
       "data": {
         "subject": "WebSearch",
-        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow."
+        "recommendation": "Prefer the narrowest command/path pattern that supports the workflow.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "a853da3e66919969"
+      "fingerprint": "d1998ee6cfec6edc"
     },
     {
       "tool": "scope_trail",
@@ -441,11 +471,82 @@
       "location": {
         "file": ".claude/settings.json"
       },
+      "salientKey": "WebFetch",
       "data": {
         "subject": "WebFetch",
-        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal."
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal.",
+        "client": "Claude Code",
+        "runtimeActive": true
       },
-      "fingerprint": "b3242ffa5f6b40d8"
+      "fingerprint": "cef10c65a13e153d"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: WebSearch.",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "salientKey": "WebSearch",
+      "data": {
+        "subject": "WebSearch",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal.",
+        "client": "Claude Code",
+        "runtimeActive": true
+      },
+      "fingerprint": "6828a7b68183885a"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: Bash(curl:*).",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "salientKey": "Bash(curl:*)",
+      "data": {
+        "subject": "Bash(curl:*)",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal.",
+        "client": "Claude Code",
+        "runtimeActive": true
+      },
+      "fingerprint": "7cc5028d34cb54e2"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: Bash(wget:*).",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "salientKey": "Bash(wget:*)",
+      "data": {
+        "subject": "Bash(wget:*)",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal.",
+        "client": "Claude Code",
+        "runtimeActive": true
+      },
+      "fingerprint": "88322ab054fb284e"
+    },
+    {
+      "tool": "scope_trail",
+      "kind": "scope_trail.permission_deny_removed",
+      "severity": "medium",
+      "message": "Claude permission deny rule was removed: Bash(rm -rf:*).",
+      "location": {
+        "file": ".claude/settings.json"
+      },
+      "salientKey": "Bash(rm -rf:*)",
+      "data": {
+        "subject": "Bash(rm -rf:*)",
+        "recommendation": "Keep deny rules for secrets, credentials, and protected files unless a reviewer approves the removal.",
+        "client": "Claude Code",
+        "runtimeActive": true
+      },
+      "fingerprint": "e98c92238f1b8c17"
     },
     {
       "tool": "session_trail",
@@ -648,12 +749,12 @@
     }
   ],
   "droppedBelowThreshold": 0,
-  "duplicateCollapsed": 4,
+  "duplicateCollapsed": 0,
   "invalidReports": [],
   "invalidFindings": [],
   "severityCounts": {
     "low": 0,
-    "medium": 17,
+    "medium": 21,
     "high": 17,
     "critical": 4
   }

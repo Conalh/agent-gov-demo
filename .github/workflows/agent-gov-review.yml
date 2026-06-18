@@ -27,7 +27,7 @@ jobs:
 
       # 1. ScopeTrail — agent permission drift in this PR.
       - name: ScopeTrail
-        uses: Conalh/ScopeTrail@v0.3.1
+        uses: Conalh/ScopeTrail@v0.4.0
         with:
           fail-on: none
       - name: Collect ScopeTrail report
@@ -66,14 +66,23 @@ jobs:
         run: cp "${RUNNER_TEMP}/taskbound-report.json" reports/ || true
 
       # 5. SessionTrail — runtime behavior from agent transcripts checked into the repo.
+      - name: Check SessionTrail transcripts
+        id: sessiontrail-input
+        run: |
+          if [ -d ai-agent-transcripts ] && find ai-agent-transcripts -type f -name '*.jsonl' -print -quit | grep -q .; then
+            echo "has-transcripts=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has-transcripts=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: SessionTrail
+        if: steps.sessiontrail-input.outputs.has-transcripts == 'true'
         uses: Conalh/SessionTrail@v0.6.4
         with:
           transcript-dir: ai-agent-transcripts
           repo: .
           fail-on: none
       - name: Collect SessionTrail report
-        if: always()
+        if: always() && steps.sessiontrail-input.outputs.has-transcripts == 'true'
         run: cp "${RUNNER_TEMP}/sessiontrail-report.json" reports/ || true
 
       # 6. GovVerdict — one consolidated review across all five reports.
